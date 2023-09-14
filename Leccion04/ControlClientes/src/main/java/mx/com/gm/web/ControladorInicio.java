@@ -1,9 +1,8 @@
 package mx.com.gm.web;
 
 
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import mx.com.gm.dao.PersonaDao;
+import mx.com.gm.servicio.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -18,13 +17,13 @@ public class ControladorInicio {
     Similar al @inyect de javaEE*/
     
     @Autowired
-    private PersonaDao personaDao;
+    private PersonaService personaService;
 
     @GetMapping("/")
     /*sobre inicio recibiremos el objeto modelo*/
     public String inicio(Model model){
        
-        var personas = personaDao.findAll();
+        var personas = personaService.listarPersonas();
         
         log.info("ejecutando el controlador Spring MVC");
         
