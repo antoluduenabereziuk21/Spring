@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Datos de la persona</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Datos de la Persona</h1>
+        <!-- para indicar rutas debemos usar @{/path} -->
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <!-- Para asociar este formulario al tipo Persona , thymeleaf usa la siguiente sintaxis
+         th:object="${persona} especificando la variable que hemos compartido ${nombre_variable}-->
+        <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            <!--  para asacionar el campo de input debemos usar th:field="*{nombre} indicando cual es el 
+            atributo de tipo persona que queremos acceder mediante *{nombre_atributo}-->
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}">
+            <br/>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" th:field="*{apellido}">
+            <br/>
+            <label for="email">Email:</label>
+            <input type="text" name="email" th:field="*{email}">
+            <br/>
+            <label for="telefono">Telefono:</label>
+            <input type="text" name="telefono" th:field="*{telefono}">
+            <br/>
+            <input type="submit" name="guardar" value="guardar" >
+        </form>
+    </body>
+</html>
