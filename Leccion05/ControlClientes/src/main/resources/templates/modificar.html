@@ -13,6 +13,7 @@
         <!-- Para asociar este formulario al tipo Persona , thymeleaf usa la siguiente sintaxis
          th:object="${persona} especificando la variable que hemos compartido ${nombre_variable}-->
         <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            <input type="hidden" name="idPersona" th:field="*{idPersona}">
             <!--  para asacionar el campo de input debemos usar th:field="*{nombre} indicando cual es el 
             atributo de tipo persona que queremos acceder mediante *{nombre_atributo}-->
             <label for="nombre">Nombre:</label>

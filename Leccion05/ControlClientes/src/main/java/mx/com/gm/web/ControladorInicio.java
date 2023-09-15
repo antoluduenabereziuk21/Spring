@@ -43,4 +43,14 @@ public class ControladorInicio {
         personaService.guardar(persona);
         return "redirect:/";
     }
+    //dentro esta path luego de /editar/ debe ir tal cual esta definido el atributo en La Clase
+    @GetMapping("/editar/{idPersona}")
+    public String editar(Persona persona, Model model){
+            persona = personaService.encontrarPersona(persona);
+            model.addAttribute("persona", persona);
+            return "modificar";
+    }
+    /* Por detras spring pasa el idPersona. al metodo editar, para luego por el servicio encontrar la persona.
+    luego se lo campartimos al model(contenedor de spring) a esta persona recuperada , para luego incluir estos datos en el form y luego porder 
+    modificar los datos*/
 }
