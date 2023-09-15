@@ -29,6 +29,7 @@
                     <!-- dentro de este link tendremos el path de editar y se le concatenara el id de la persona 
                     (esto se conoce como path varaible) -->
                     <td> <a th:href="@{/editar/} + ${persona.idPersona}" th:text="Editar"/></td>
+                    <td> <a th:href="@{/eliminar/} + ${persona.idPersona}" th:text="Eliminar"/></td>
                 </tr>
             </table>
         </div>

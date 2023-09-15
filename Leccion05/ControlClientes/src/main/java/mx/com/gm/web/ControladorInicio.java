@@ -53,4 +53,10 @@ public class ControladorInicio {
     /* Por detras spring pasa el idPersona. al metodo editar, para luego por el servicio encontrar la persona.
     luego se lo campartimos al model(contenedor de spring) a esta persona recuperada , para luego incluir estos datos en el form y luego porder 
     modificar los datos*/
+    
+    @GetMapping("/eliminar/{idPersona}")
+    public String eliminar(Persona persona, Model model){
+            personaService.eliminar(persona);
+            return "redirect:/";
+    }
 }
