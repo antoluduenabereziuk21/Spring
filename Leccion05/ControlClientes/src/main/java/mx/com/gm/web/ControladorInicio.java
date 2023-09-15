@@ -59,4 +59,13 @@ public class ControladorInicio {
             personaService.eliminar(persona);
             return "redirect:/";
     }
+    /* pasando por query params solamente tenemos que indicar el path, 
+    no es necesario pasar el id como parametro
+    
+    @GetMapping("/eliminar")
+    public String eliminar(Persona persona, Model model){
+            personaService.eliminar(persona);
+            return "redirect:/";
+    }
+    */
 }

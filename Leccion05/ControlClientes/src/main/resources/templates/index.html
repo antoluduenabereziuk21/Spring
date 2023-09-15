@@ -30,6 +30,11 @@
                     (esto se conoce como path varaible) -->
                     <td> <a th:href="@{/editar/} + ${persona.idPersona}" th:text="Editar"/></td>
                     <td> <a th:href="@{/eliminar/} + ${persona.idPersona}" th:text="Eliminar"/></td>
+                    <!-- tambien podriamos enviar id dentro del path por queryParams de las siguiente manera
+                    <td> <a th:href="@{/eliminar(idPersona=${persona.idPersona})}" th:text="Eliminar"/></td> 
+                    pero tendremos que modficar el controlador tambien
+                    -->
+                    
                 </tr>
             </table>
         </div>
